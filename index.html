@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>pdf generator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="main-container" id="mca-result">
+       <div class="heading-container">
+        <h1>MCA marks summary sheet</h1>
+        <h2> session july 2022</h2>
+       </div>
+       <div class="table-container">
+        <table>
+    
+            <th> S.no</th>
+            <th>Roll no</th>
+            <th>Student Name</th>
+            <th>Max-marks</th>
+            <th>Marks-Scored</th>
+            <tr>
+                <td>01</td>
+                <td>21/FCA/MCA/01</td>
+                <td>SUMAN</td>
+                <td>500</td>
+                <td>499</td>
+                
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>21/FCA/MCA/02</td>
+                <td>SUNIL</td>
+                <td>500</td>
+                <td>499</td>
+                
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>21/FCA/MCA/03</td>
+                <td>ROHIT</td>
+                <td>500</td>
+                <td>412</td>
+                
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>21/FCA/MCA/04</td>
+                <td>SUMAN</td>
+                <td>500</td>
+                <td>409</td>
+                
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>21/FCA/MCA/05</td>
+                <td>PUJA</td>
+                <td>500</td>
+                <td>309</td>
+                
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>21/FCA/MCA/06</td>
+                <td>Simran</td>
+                <td>500</td>
+                <td>400</td>
+                
+            </tr>
+            <tr>
+                <td>07</td>
+                <td>21/FCA/MCA/07</td>
+                <td>ANIKET</td>
+                <td>500</td>
+                <td>493</td>
+                
+            </tr>
+            <tr>
+                <td>08</td>
+                <td>21/FCA/MCA/08</td>
+                <td>SONU</td>
+                <td>500</td>
+                <td>244</td>
+                
+               </tr>
+           </table>
+       </div>
+       <div class="btn-container">
+        <input type="submit" value="Download PDF" onclick="generate()">
+    </div>
+    
+      <script type="text/javascript">
+        function generate(){
+        var element = document.getElementById('mca-result');
+var opt = {
+  margin:       1,
+  filename:     'myfile.pdf',
+  image:        { type: 'jpeg', quality: 0.98 },
+  html2canvas:  { scale: 2 },
+  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+};
+
+// New Promise-based usage:
+html2pdf().set(opt).from(element).save();
+
+// Old monolithic-style usage:
+html2pdf(element, opt);
+        }
+      </script>
+
+
+
+
+    
+</body>
+</html>
